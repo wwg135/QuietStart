@@ -2,7 +2,7 @@
   "schema": 2,
   "id": "quietstart.splash-ad",
   "name": "跳过开屏广告",
-  "version": 7,
+  "version": 8,
   "manual": {
     "capability": "layout-tap",
     "title": "学习跳过广告",
