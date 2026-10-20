@@ -2,7 +2,7 @@
   "schema": 2,
   "id": "quietstart.splash-ad",
   "name": "跳过开屏广告",
-  "version": 8,
+  "version": 9,
   "manual": {
     "capability": "layout-tap",
     "title": "学习跳过广告",
@@ -14,9 +14,9 @@
   },
   "defaults": {
     "limit": {
-      "maxWidth": 0.6,
-      "maxHeight": 0.24,
-      "maxArea": 0.09
+      "maxWidth": 0.7,
+      "maxHeight": 0.32,
+      "maxArea": 0.12
     }
   },
   "steps": [
@@ -80,10 +80,13 @@
         "evidence": {
           "text": [
             "广告",
+            "廣告",
             "Ad",
             "Advertisement",
             "跳过\\s*\\d+",
-            "^\\d{1,2}\\s*[sS]$"
+            "跳過\\s*\\d+",
+            "^\\d{1,2}\\s*[sS]$",
+            "^[1-9]\\d?$"
           ],
           "id": ["ad", "ads", "advert", "advertisement", "splash", "advertising"],
           "cta": [
