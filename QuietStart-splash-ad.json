@@ -116,7 +116,7 @@
       "markerEvidenceLabel": "广告",
       "anchorLabels": ["跳过", "skip"],
       "do": { "capability": "click" },
-      "expect": { "result": "gone", "settleMs": 3000, "samples": 1 }
+      "expect": { "result": "gone", "settleMs": 3000, "samples": 2 }
     }
   ]
 }
