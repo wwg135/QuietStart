@@ -2,7 +2,7 @@
   "schema": 2,
   "id": "quietstart.splash-ad",
   "name": "跳过开屏广告",
-  "version": 6,
+  "version": 7,
   "manual": {
     "capability": "layout-tap",
     "title": "学习跳过广告",
@@ -10,22 +10,23 @@
   },
   "when": {
     "trigger": "app-foreground",
-    "windowMs": 12000
+    "windowMs": 10000
   },
   "defaults": {
     "limit": {
       "maxWidth": 0.6,
-      "maxHeight": 0.18,
-      "maxArea": 0.075
+      "maxHeight": 0.24,
+      "maxArea": 0.09
     }
   },
   "steps": [
     {
       "find": {
-        "by": ["text", "image", "structure"],
+        "by": ["text", "structure", "image"],
         "match": [
           "跳过广告",
           "跳过",
+          "点击跳过",
           "skipad",
           "skip",
           "关闭广告",
@@ -77,7 +78,13 @@
       },
       "need": {
         "evidence": {
-          "text": ["广告", "Ad", "Advertisement"],
+          "text": [
+            "广告",
+            "Ad",
+            "Advertisement",
+            "跳过\\s*\\d+",
+            "^\\d{1,2}\\s*[sS]$"
+          ],
           "id": ["ad", "ads", "advert", "advertisement", "splash", "advertising"],
           "cta": [
             "(?:上滑|滑动|点击)[^。]{0,8}(?:跳转|进入|打开)[^。]{0,6}第三方",
@@ -109,7 +116,7 @@
       "markerEvidenceLabel": "广告",
       "anchorLabels": ["跳过", "skip"],
       "do": { "capability": "click" },
-      "expect": { "result": "gone", "settleMs": 10000, "samples": 2 }
+      "expect": { "result": "gone", "settleMs": 3000, "samples": 1 }
     }
   ]
 }
